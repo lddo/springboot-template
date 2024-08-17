@@ -2,8 +2,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://dbserver:3306/springboot-template?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
-    username: develop
-    password: jIwMzBAdtVXsENiv
+    username: springboot-template
+    password: WAz5kPNfWw3NsAmE
   data:
     redis:
       host: dbserver
