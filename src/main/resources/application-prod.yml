@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://dbserver:3306/springboot-template?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: develop
+    password: jIwMzBAdtVXsENiv
+  data:
+    redis:
+      host: dbserver
+      port: 6379
+      database: 1
+      password: Xt96YyprcwaLqIB4
+knife4j:
+  production: true
+logging:
+  config: classpath:logback-prod.xml

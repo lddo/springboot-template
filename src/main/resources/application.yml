@@ -1,0 +1,47 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: springboot-template
+  profiles:
+    active: local
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: true
+  flyway:
+    enabled: true
+    clean-disabled: true
+    baseline-on-migrate: true
+    baseline-version: 1
+    locations: classpath:db/migration
+  quartz:
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: never
+    scheduler-name: ${spring.application.name}-scheduler
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+#  global-config:
+#    db-config:
+#      key-generators: com.baomidou.mybatisplus.extension.incrementer.H2KeyGenerator
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: cn.uppp.springboot.template.controller
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
